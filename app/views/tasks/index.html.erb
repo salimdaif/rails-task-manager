@@ -1,0 +1,18 @@
+<div class="container text-center">
+  <h2>TO DO LIST!</h2>
+  <%= link_to "Create new task", tasks_new_path %>
+  <ul class="list-group">
+    <% @tasks.each do |t| %>
+    <li class="list-group-item">
+      <span class="badge"> status: <%= t.status %> </span>
+      <h3> <%= t.name %> </h3>
+      <%= link_to "See More", task_path(t) %>
+      <%= link_to "Edit", edit_path(t) %>
+      <%= button_to "Delete", destroy_path(t), method: :delete, data: {confirm: "Are you sure?"} %>
+    </li>
+  <%end%>
+  </ul>
+</div>
+
+
+
